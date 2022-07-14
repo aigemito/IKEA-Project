@@ -8,10 +8,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IProductService {
-    public abstract List<Product> getAllProducts();
-    public abstract Optional<Product> getById(int productId);
-    public abstract ProductAvailabilityDTO getAvailabilityById(int productId);
-    public abstract List<ProductDTO> getByCategory(String category);
-    public abstract Product save(Product product);
-
+   List<Product> getAllProducts();
+   Optional<Product> getById(int productId);
+   List<Product> getByCategory(String category);
+   Product save(Product product);
+   List<Product> getAvailabilityByProductCode(String productCode);
+   boolean delete(Product product) throws Exception;
+   List<String> getDiscountForMostPopularProduct();
+   List<Integer> deleteLowestRating();
 }
